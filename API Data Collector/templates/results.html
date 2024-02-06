@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='stylin.css')}}">
+</head>
+<body>
+    <h1>Search Results for {{location}}</h1>
+    {% if boba_spots %}
+        <ol>
+            {% for place in boba_spots %}
+                <li>{{ place.name }} - Rating: {{ place.rating }}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>No boba spots found. Try a different location.</p>
+    {% endif %}
+    <a href="/">Back to Search</a>
+</body>
+</html>                         
