@@ -1,7 +1,6 @@
 #pip install python-dotenv
 #pip install Flask
 
-#Add pictures from API
 #Style more w stylin'
 
 import os
@@ -25,7 +24,15 @@ def get_boba_spots(location):
 
     response = requests.get("https://api.yelp.com/v3/businesses/search", headers=headers, params=params)
     if response.status_code == 200:
-        return response.json()["businesses"]
+        businesses = response.json()["businesses"]
+        boba_spots = []
+        for shop in businesses:
+            boba_spots.append({
+                'name': shop['name'],
+                'rating': shop['rating'],
+                'image_url': shop['image_url']
+            })
+        return boba_spots
     else:
         print("Failed to fetch data from Yelp API. Status Code:", response.status_code)
         return None
