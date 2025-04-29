@@ -19,7 +19,7 @@ def get_boba_spots(location):
     params = {
         "term": "boba",
         "location": location,
-        "limit": 5
+        "limit": 7
     }
 
     response = requests.get("https://api.yelp.com/v3/businesses/search", headers=headers, params=params)
@@ -30,6 +30,7 @@ def get_boba_spots(location):
             boba_spots.append({
                 'name': shop['name'],
                 'rating': shop['rating'],
+                'location':shop['location'],
                 'image_url': shop['image_url']
             })
         return boba_spots

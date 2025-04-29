@@ -15,4 +15,6 @@ body {
 
 a {
     color: #ffffff;
+    p.solid {outline-style: solid;}
+
 }
