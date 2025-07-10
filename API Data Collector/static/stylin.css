@@ -11,10 +11,173 @@ body {
     background: -webkit-gradient(radial, center center, 10, center center, 900, from(#9f8686), to(#3e4f63));
     color: white;
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 a {
     color: #ffffff;
     p.solid {outline-style: solid;}
 
+}
+
+/* Cute and round text input styling */
+input[type="text"] {
+    border: 3px solid #b6baff;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #fff5f5;
+    color: #4a4a4a;
+    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: #6969ff;
+    box-shadow: 0 6px 12px rgba(105, 105, 255, 0.4);
+    transform: translateY(-2px);
+    background-color: #fff;
+}
+
+input[type="text"]::placeholder {
+    color: #c0c0c0;
+    font-style: italic;
+}
+
+/* Cute button styling to match */
+button[type="submit"], .search-btn {
+    background: linear-gradient(135deg, #b7b6ff, #6969ff);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+button[type="submit"]:hover, .search-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(105, 105, 255, 0.4);
+    background: linear-gradient(135deg, #6969ff, #0000ff);
+}
+
+button[type="submit"]:active, .search-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Form styling for better layout */
+form {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 500px;
+    width: 100%;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    white-space: nowrap;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 8px 0;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    
+    body {
+        padding: 15px;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    label {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"] {
+        max-width: 100%;
+        font-size: 18px;
+        padding: 15px 20px;
+        border-radius: 30px;
+    }
+    
+    button[type="submit"], .search-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        margin-left: 0;
+    }
+    
+    form {
+        max-width: 100%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+    
+    .search-container {
+        gap: 15px;
+    }
+    
+    label {
+        font-size: 16px;
+    }
+    
+    input[type="text"] {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+    
+    button[type="submit"], .search-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
 }
